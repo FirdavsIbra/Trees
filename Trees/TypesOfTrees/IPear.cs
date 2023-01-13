@@ -2,7 +2,7 @@
 
 namespace Trees.TypesOfTrees
 {
-    public class Pear : Tree
+    public interface IPear : ITree
     {
     }
 }

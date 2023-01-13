@@ -2,21 +2,21 @@
 
 namespace Trees.TypesOfSorts.Apples
 {
-    public sealed class Golden : Apple
+    public sealed class Golden : IApple
     {
         /// <summary>
         /// Get height of tree in metre.
         /// </summary>
-        public override double HeightInM { get; } = 5.12D;
+        public double HeightInM { get; } = 5.12D;
 
         /// <summary>
         /// Get ocupying area of the tree;
         /// </summary>
-        public override double Square { get; } = 12.43D;
+        public double Square { get; } = 12.43D;
 
         /// <summary>
         /// Get begining year of the harvest.
         /// </summary>
-        public override double BeginingOfTheHarvestInY { get; } = 4.5D;
+        public double BeginingOfTheHarvestInY { get; } = 4.5D;
     }
 }

@@ -4,11 +4,12 @@ using Trees.Solution;
 using Trees.TypesOfSorts.Apples;
 using Trees.TypesOfSorts.Grapes;
 using Trees.TypesOfSorts.Pears;
+
 internal class Program
 {
     private static void Main(string[] args)
     {
-        IList<Tree> trees = new List<Tree>();
+        IList<ITree> trees = new List<ITree>();
 
         Console.WriteLine("\t\t\t\tWelcome!");
         var plotSize = Prompt.Input<double>("Enter total area of your plot, where you want to plant trees");

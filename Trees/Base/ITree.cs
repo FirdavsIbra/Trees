@@ -1,20 +1,20 @@
 ﻿namespace Trees.Base
 {
-    public abstract class Tree
+    public interface ITree
     {
         /// <summary>
         /// Gets height of tree in metre.
         /// </summary>
-        public virtual double HeightInM { get; }
+        public double HeightInM { get; }
 
         /// <summary>
         /// Gets ocupying area of the tree.
         /// </summary>
-        public virtual double Square { get; }
+        public double Square { get; }
 
         /// <summary>
         /// Gets begining year of the harvest.
         /// </summary>
-        public virtual double BeginingOfTheHarvestInY { get; }
+        public double BeginingOfTheHarvestInY { get; }
     }
 }

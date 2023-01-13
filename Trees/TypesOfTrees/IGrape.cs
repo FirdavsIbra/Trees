@@ -2,7 +2,7 @@
 
 namespace Trees.TypesOfTrees
 {
-    public class Apple : Tree
+    public interface IGrape : ITree
     {
     }
 }

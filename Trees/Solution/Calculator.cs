@@ -7,7 +7,7 @@ namespace Trees.Solution
         /// <summary>
         /// Get results.
         /// </summary>
-        public Result GetResult(IEnumerable<Tree> trees)
+        public Result GetResult(IEnumerable<ITree> trees)
         {
             double year = GetMaximumYearOfHarvest(trees);
             double totalArea = GetTotalOccupyingArea(trees);
@@ -24,9 +24,9 @@ namespace Trees.Solution
         /// <summary>
         /// Get maximum year of the harvest.
         /// </summary>
-        private double GetMaximumYearOfHarvest(IEnumerable<Tree> trees)
+        private double GetMaximumYearOfHarvest(IEnumerable<ITree> trees)
         {
-            var maxYearOfHarvest = trees.Select(trees => trees.BeginingOfTheHarvestInY).Max();
+            var maxYearOfHarvest = trees.Max(trees => trees.BeginingOfTheHarvestInY);
 
             return maxYearOfHarvest;
         }
@@ -34,9 +34,9 @@ namespace Trees.Solution
         /// <summary>
         /// Get total occupying area of the tree.
         /// </summary>
-        private double GetTotalOccupyingArea(IEnumerable<Tree> trees)
+        private double GetTotalOccupyingArea(IEnumerable<ITree> trees)
         {
-            var totalOccupyingArea = trees.Select(trees => trees.Square).Sum();
+            var totalOccupyingArea = trees.Sum(trees => trees.Square);
 
             return totalOccupyingArea;
         }
@@ -44,9 +44,9 @@ namespace Trees.Solution
         /// <summary>
         /// Get average height of the tree.
         /// </summary>
-        private double GetAverageHeight(IEnumerable<Tree> trees)
+        private double GetAverageHeight(IEnumerable<ITree> trees)
         {
-            var averageMaxHeight = trees.Select(trees => trees.HeightInM).Average();
+            var averageMaxHeight = trees.Average(trees => trees.HeightInM);
 
             return averageMaxHeight;
         }
