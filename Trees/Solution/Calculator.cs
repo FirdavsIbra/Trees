@@ -13,7 +13,7 @@ namespace Trees.Solution
             double totalArea = GetTotalOccupyingArea(trees);
             double avgMaxHeight = GetAverageHeight(trees);
 
-            return new Result()
+            return new Result
             {
                 MaxHeight = avgMaxHeight,
                 TotalArea = totalArea,
@@ -26,9 +26,7 @@ namespace Trees.Solution
         /// </summary>
         private double GetMaximumYearOfHarvest(IEnumerable<ITree> trees)
         {
-            var maxYearOfHarvest = trees.Max(trees => trees.BeginingOfTheHarvestInY);
-
-            return maxYearOfHarvest;
+            return trees.Max(trees => trees.BeginingOfTheHarvestInY);
         }
 
         /// <summary>
@@ -36,9 +34,7 @@ namespace Trees.Solution
         /// </summary>
         private double GetTotalOccupyingArea(IEnumerable<ITree> trees)
         {
-            var totalOccupyingArea = trees.Sum(trees => trees.Square);
-
-            return totalOccupyingArea;
+            return trees.Sum(trees => trees.Square);
         }
 
         /// <summary>
@@ -46,9 +42,7 @@ namespace Trees.Solution
         /// </summary>
         private double GetAverageHeight(IEnumerable<ITree> trees)
         {
-            var averageMaxHeight = trees.Average(trees => trees.HeightInM);
-
-            return averageMaxHeight;
+            return trees.Average(trees => trees.HeightInMetre);
         }
     }
 }

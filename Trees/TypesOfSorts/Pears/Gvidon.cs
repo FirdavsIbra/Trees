@@ -5,9 +5,14 @@ namespace Trees.TypesOfSorts.Pears
     public sealed class Gvidon : IPear
     {
         /// <summary>
+        /// Gets the name of sort of tree.
+        /// </summary>
+        public string SortName => nameof(Gvidon);
+
+        /// <summary>
         /// Get height of tree in metre.
         /// </summary>
-        public double HeightInM { get; } = 3.65D;
+        public double HeightInMetre { get; } = 3.65D;
 
         /// <summary>
         /// Get ocupying area of the tree;

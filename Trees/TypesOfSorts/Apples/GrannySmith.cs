@@ -5,18 +5,23 @@ namespace Trees.TypesOfSorts.Apples
     public sealed class GrannySmith : IApple
     {
         /// <summary>
+        /// Gets the name of sort of tree.
+        /// </summary>
+        public string SortName => nameof(GrannySmith);
+
+        /// <summary>
         /// Get height of tree in metre.
         /// </summary>
-        public double HeightInM { get; } = 6.43D;
+        public double HeightInMetre => 6.43D;
 
         /// <summary>
         /// Get ocupying area of the tree;
         /// </summary>
-        public double Square { get; } = 8.65D;
+        public double Square => 8.65D;
 
         /// <summary>
         /// Get begining year of the harvest.
         /// </summary>
-        public double BeginingOfTheHarvestInY { get; } = 4.5D;
+        public double BeginingOfTheHarvestInY => 4.5D;
     }
 }
