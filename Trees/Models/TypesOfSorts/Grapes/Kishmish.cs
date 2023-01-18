@@ -1,27 +1,27 @@
 ﻿using Trees.TypesOfTrees;
 
-namespace Trees.TypesOfSorts.Apples
+namespace Trees.Models.TypesOfSorts.Grapes
 {
-    public sealed class Semerenko : IApple
+    public sealed class Kishmish : IGrape
     {
         /// <summary>
         /// Gets the name of sort of tree.
         /// </summary>
-        public string SortName => nameof(Semerenko);
+        public string SortName => nameof(Kishmish);
 
         /// <summary>
         /// Get height of tree in metre.
         /// </summary>
-        public double HeightInMetre => 3.5D;
+        public double HeightInMetre => 8;
 
         /// <summary>
         /// Get ocupying area of the tree;
         /// </summary>
-        public double Square => 5.21D;
+        public double Square => 21;
 
         /// <summary>
         /// Get begining year of the harvest.
         /// </summary>
-        public double BeginingOfTheHarvestInY => 5;
+        public double BeginingOfTheHarvestInY => 2.4D;
     }
 }

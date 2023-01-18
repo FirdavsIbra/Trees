@@ -26,6 +26,8 @@ namespace Trees.Solution
         /// </summary>
         private double GetMaximumYearOfHarvest(IEnumerable<ITree> trees)
         {
+            if (!trees.Any())
+                return 0;
             return trees.Max(trees => trees.BeginingOfTheHarvestInY);
         }
 
@@ -34,6 +36,8 @@ namespace Trees.Solution
         /// </summary>
         private double GetTotalOccupyingArea(IEnumerable<ITree> trees)
         {
+            if (!trees.Any())
+                return 0;
             return trees.Sum(trees => trees.Square);
         }
 
@@ -42,6 +46,8 @@ namespace Trees.Solution
         /// </summary>
         private double GetAverageHeight(IEnumerable<ITree> trees)
         {
+            if (!trees.Any())
+                return 0;
             return trees.Average(trees => trees.HeightInMetre);
         }
     }

@@ -1,13 +1,17 @@
 ﻿using Trees.Base;
-using Trees.Enums;
+using Trees.Models.Enums;
+using Trees.Models.TypesOfSorts.Apples;
+using Trees.Models.TypesOfSorts.Grapes;
+using Trees.Models.TypesOfSorts.Pears;
 using Trees.TypesOfSorts.Apples;
-using Trees.TypesOfSorts.Grapes;
-using Trees.TypesOfSorts.Pears;
 
 namespace Trees.Factory
 {
     public sealed class Creator
     {
+        /// <summary>
+        /// Return string array of sorts.
+        /// </summary>
         public string[] TreeFactory(TypeOfTree typeOfTree)
         {
             return typeOfTree switch
@@ -18,6 +22,10 @@ namespace Trees.Factory
                 _ => throw new ArgumentException("Tree sort not found")
             };
         }
+
+        /// <summary>
+        /// Return initialized objects of each sorts.
+        /// </summary>
         public ITree TreeFactory(SortOfTree sortOfTree)
         {
             return sortOfTree switch

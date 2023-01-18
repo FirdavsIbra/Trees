@@ -1,15 +1,13 @@
-﻿using Trees;
-using Trees.Base;
+﻿using Trees.Service;
 
 internal class Program
 {
     private static void Main(string[] args)
     {
-        IList<ITree> trees = new List<ITree>();
-
-        Menu menu = new Menu();
+        ITreeService treeService = new TreeService();
+        Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("\t\t\t\tWelcome!");
-
-        menu.ShowMenu(trees);
+        Console.ForegroundColor = ConsoleColor.White;
+        treeService.CreatePlot();
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Trees.Enums
+﻿namespace Trees.Models.Enums
 {
     public enum TypeOfTree
     {
