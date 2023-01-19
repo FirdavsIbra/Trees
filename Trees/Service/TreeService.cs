@@ -37,7 +37,11 @@ namespace Trees.Service
         {
             _treeInput.Capacity = _validation.CheckCapacity();
 
+            Console.ForegroundColor = ConsoleColor.Green;
+
             Console.WriteLine("Successfuly changed!");
+
+            Console.ForegroundColor = ConsoleColor.White;
 
             ShowMainMenu();
         }
@@ -56,13 +60,22 @@ namespace Trees.Service
                                            .WithItems(typesOfTree));
 
             var amount = _validation.CheckAmountOfTrees(sortOfTree);
-
-            for (int index = 0; index < amount; index++)
+            
+            AnsiConsole.Status().Spinner(Spinner.Known.Star).Start("Loading...", ctx =>
             {
-                var treeFactory = _creator.TreeFactory(Enum.Parse<SortOfTree>(sortOfTree));
+                for (int index = 0; index < amount; index++)
+                {
+                    var treeFactory = _creator.TreeFactory(Enum.Parse<SortOfTree>(sortOfTree));
 
-                _treeInput.Trees.Add(treeFactory);
-            }
+                    _treeInput.Trees.Add(treeFactory);
+                }
+            });
+
+            Console.ForegroundColor = ConsoleColor.Green;
+
+            Console.WriteLine("Successfuly added!");
+
+            Console.ForegroundColor = ConsoleColor.White;
 
             ShowMainMenu();
         }
@@ -73,8 +86,12 @@ namespace Trees.Service
         public void PrintResult()
         {
             Calculator solution = new();
-            var result = solution.GetResult(_treeInput.Trees);
-            DrawTable(_treeInput.Capacity, result.TotalArea, result.MaxHeight, result.Year);
+            
+            AnsiConsole.Status().Spinner(Spinner.Known.Star).Start("Loading...", ctx =>
+            {
+                var result = solution.GetResult(_treeInput.Trees);
+                DrawTable(_treeInput.Capacity, result.TotalArea, result.MaxHeight, result.Year);
+            });
 
             Console.ForegroundColor = ConsoleColor.White;
             
@@ -86,11 +103,14 @@ namespace Trees.Service
         /// </summary>
         public void ShowCapacity()
         {
-            Table table = new Table();
+            Console.ForegroundColor = ConsoleColor.Green;
+            
+            Table table = new();
             table.AddColumn("Capacity");
             table.AddRow(_treeInput.Capacity.ToString() + "m2");
             AnsiConsole.Write(table);
 
+            Console.ForegroundColor = ConsoleColor.White;
             ShowMainMenu();
         }
 
@@ -156,7 +176,7 @@ namespace Trees.Service
             table.AddColumn("Area, that takes your trees");
             table.AddColumn("Maximum average height");
             table.AddColumn("Maximum years after all trees give fruits");
-            table.AddRow(capacity.ToString(), area.ToString(), maxHeight.ToString(), year.ToString());
+            table.AddRow(capacity.ToString() + " m2", area.ToString(), maxHeight.ToString(), year.ToString());
 
             AnsiConsole.Write(table);
         }
